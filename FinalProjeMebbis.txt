@@ -1,0 +1,40 @@
+MEDİPOL ÜNİVERSİTESİ
+2022 - 2023 Eğitim Öğretim Yılı
+BİLGİSAYAR PROGRAMCILIĞI PROGRAMI
+BPR2260500 - İLERİ JAVA UYGULAMALARI 
+
+FİNAL PROJE ÖDEVİ
+
+Spring Boot ve Spring MVC kullanarak, H2(dosya modu) ile çalışan, veri üzerinde 4 işlem yapan(Oluşturma, Okuma, Silme, Güncelleme) ve tek 1 sayfa HTML arayüzü olan bir uygulama yazınız. 4 işlemin her biri için 1 tane ve listeleme için 1 tane olmak üzere toplam 5 tane RESTful web servis yazınız. Uygulama Swagger-UI önyüzüne sahip olacak ve sunduğu servisler bu önyüzde test edilebilir olacaktır. Her servisin ilk satırında, servisin adı ve isteğin geldiği zamanı yazdıran günlük('log') bulunacaktır.
+
+Uygulama bir evcil hayvan dükkanındaki minik misafirlerin kaydının tutulması için kullanılacaktır. Veritabanı nesnesinin ismi 'Misafir' olacaktır. 'kilo' alanı virgülden sonra 1 basamak olacak ve 'gelisTarihi' alanı için önyüzden sadece tarih(saat değil) girilecek ve gösterilecektir.
+
+Servis isimleri:
+ ekle
+ getir
+ sil
+ guncelle
+ listele
+
+Veritabanı nesnesinin alanlarının türü ve adı:
+ String misafirAd
+ Integer yas
+ Double kilo
+ Date gelisTarihi
+ String notlar
+
+Web Sayfası:
+ index.html
+
+Notlar:
+*Ödev dosyasının adı öğrenci numarası ve dosya tipi zip olacaktır.
+*Java 8 veya üzeri bir sürüm kullanabilirsiniz.
+*Servis isimleri, veritabanı nesnesinin ve alanlarının isimleri birebir yukarıda yazılan şekilde olacaktır.
+*HTML sayfası tarayıcıdan açıldığında öğrenci numarası, ad ve soyad bu sayfa üzerinde görülmelidir.
+
+Artı Puan Getirecekler:
+*HTML sayfasını şekillendirmek için CSS kullanımı
+*HTML sayfasındaki tüm servis çağrımları için React/Ajax/JQuery kullanımı
+*Veriler için arama özelliği
+
+BAŞARILAR

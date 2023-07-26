@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>İleri Java Final Ödevi</title>
+    <style>
+        body {background-image:url("img/background.jpg") ;}
+		
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #misafirEkle{
+	width:300px;
+	height:300px;
+	float:left;
+	
+  }
+  #ogrenciInfo{
+	width: 100%;
+	height: 100px;
+	text-align:center;
+	vertical-align:center;	
+  }
+  .ortala{
+	text-align:center;
+  }
+  
+  
+
+  #misafirGuncelle{
+	width:300px;
+	height:300px;
+	float:left;
+	margin:0px 30px 0px 30px;
+  }
+  #misafirSil{
+	float:left;
+	height:300px;
+  }
+  
+  #misafirGetir{
+	float:left;
+	width:450px;
+	margin:0px 30px 0px 30px;
+  }
+  /*
+  #misafirGetir table tr th td {
+	width:400px;
+	max-width: 400px; /* Tablonun en fazla %100 genişliğe sahip olmasını sağlar */
+	table-layout: fixed; /* Tablonun sabit bir düzen kullanmasını sağlar */
+	}
+  */
+  #misafirListele{
+	float:left;
+	width:500px;
+	margin:0px 0px 0px 30px;
+	text-align:center;
+  }
+  .clear{
+	float:both;
+  }
+  
+    </style>
+</head>
+<body>
+	<div id="ogrenciInfo"><h1>H5210013 - EMRE CAN</h1></div>
+	<div id="misafirEkle">
+		<table>
+			 <tr>
+				<th colspan="2" class="ortala">Misafir Ekle</th>
+			 </tr>
+			  <tr>
+				<th>Misafir Adı</th>
+				<td><input type="text" id="misafir_adi" placeholder="Misafir Adı" name="misafir_adi" required></td>
+			  </tr>
+			  <tr>
+				<th>Yaş</th>
+				<td><input type="number" id="yasEkle" placeholder="Yaş" name="yas" required></td>
+			  </tr>
+			  <tr>
+				<th>Kilo</th>
+				<td><input type="number" id="kiloEkle" placeholder="Kilo" name="kilo" required></td>
+			  </tr>
+			  <tr>
+				<th>Geliş Tarihi</th>
+				<td><input type="date" id="gelis_tarihiEkle" name="gelis_tarihi" required></td>
+			  </tr>
+			  <tr>
+				<th>Notlar</th>
+				<td><textarea id="notlarEkle" placeholder="Misafir Notu" name="notlar"></textarea></td>
+			  </tr>
+			  <tr>
+				<th colspan="2" class="ortala">
+					<input type="submit" value="Misafiri Ekle">
+				</th>
+			  </tr>
+		</table>
+		
+		</div>
+		
+		<div id="misafirGuncelle">
+		<table>
+			 <tr>
+				<th colspan="2" class="ortala">Misafir Güncelle</th>
+			 </tr>
+			 <tr>
+				<th>Misafir Id</th>
+				<td><input type="number" id="misafir_id_guncelle" placeholder="Misafir Id" name="misafir_id_guncelle" required></td>
+			  </tr>
+			  <tr>
+				<th>Misafir Adı</th>
+				<td><input type="text" id="misafir_adi_guncelle" placeholder="Misafir Adı" name="misafir_adi_guncelle" required></td>
+			  </tr>
+			  <tr>
+				<th>Yaş</th>
+				<td><input type="number" id="yasGuncelle" placeholder="Yaş" name="yasGuncelle" required></td>
+			  </tr>
+			  <tr>
+				<th>Kilo</th>
+				<td><input type="number" id="kiloGuncelle" placeholder="Kilo" name="kiloGuncelle" required></td>
+			  </tr>
+			  <tr>
+				<th>Geliş Tarihi</th>
+				<td><input type="date" id="gelis_tarihi_guncelle" name="gelis_tarihi_guncelle" required></td>
+			  </tr>
+			  <tr>
+				<th>Notlar</th>
+				<td><textarea id="notlarGuncelle" placeholder="Misafir Notu" name="notlarGuncelle"></textarea></td>
+			  </tr>
+			  <tr>
+				<th colspan="2" class="ortala">
+					<input type="submit" value="Misafiri Güncelle">
+				</th>
+			  </tr>
+		</table>
+		
+		</div>
+		
+		<div id="misafirSil">
+		<table>
+			 <tr>
+				<th colspan="2" class="ortala">Misafir Sil</th>
+			 </tr>
+			 <tr>
+				<th>Misafir Id</th>
+				<td><input type="text" id="misafir_id_sil" placeholder="Misafir Id" name="misafir_id_sil" required></td>
+			  </tr>
+			  
+			  <tr>
+				<th colspan="2" class="ortala">
+					<input type="submit" value="Misafiri Sil">
+				</th>
+			  </tr>
+		</table>
+		
+		</div>
+		
+		<div id="misafirGetir">
+		<table>
+			 <tr>
+				<th>Misafir Getir</th>
+			 </tr>
+			 <tr>
+				<th>Misafir Id</th>
+				<td><input type="text" id="misafir_id_getir" placeholder="Misafir Id" name="misafir_id_getir" required></td>
+			  </tr>
+			  <tr>
+				<th>
+					<input type="submit" value="Misafiri Getir">
+				</th>
+			  </tr>
+			  
+		</table>
+			<div id="misafirById"></div>
+		</div>
+
+		
+		<div id="misafirListele">
+			
+			<table>
+			 <tr>
+				<th colspan="2">Misafirleri Listelemek İçin Aşağıdaki Butona Tıkla !</th>
+			 </tr>
+			 <tr>
+				
+				<td><input type="submit" value="Misafirleri Listele"></td>
+			  </tr>
+			  
+			  
+			  <tr>
+				<td id="misafirListesi">
+					
+				</td>
+			  </tr>
+		</table>
+
+		</div>
+		<div class="clear"></div>
+
+		<!-- EKLEME -->
+		<script>
+			  document.querySelector("#misafirEkle input[type='submit']").addEventListener('click', function(e) {
+			  e.preventDefault(); // otomatik submiti engeller
+			  var misafirAdi = document.querySelector("#misafir_adi").value;
+			  var yas = document.querySelector("#yasEkle").value;
+			  var kilo = document.querySelector("#kiloEkle").value;
+			  var gelisTarihi = document.querySelector("#gelis_tarihiEkle").value;
+			  var notlar = document.querySelector("#notlarEkle").value;
+			  
+			  var data = {
+				misafirAd: misafirAdi,
+				yas: yas,
+				kilo: kilo,
+				gelisTarihi: gelisTarihi,
+				notlar: notlar
+			  };
+			  
+			  fetch('http://localhost:8080/ekle', {
+				method: 'POST',
+				headers: {
+				  'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(data)
+			  })
+			  .then(function(response) {
+				if (response.ok) {
+				  console.log('Başarılı');
+				  alert("Ekleme işlemi başarıyla gerçekleşti");
+				} else {
+				  console.log('Hata');
+				  alert("Ekleme Başarısız !");
+				}
+			  })
+			  .catch(function(error) {
+				console.log('Hata');
+				alert("Bir hata oluştu !");
+			  });
+			});
+		
+		</script>
+		
+		<!-- GÜNCELLEME -->
+		<script>
+			  document.querySelector("#misafirGuncelle input[type='submit']").addEventListener('click', function(e) {
+			  e.preventDefault(); // otomatik submiti engeller
+			  var misafirId = document.querySelector("#misafir_id_guncelle").value;
+			  var misafirAdi = document.querySelector("#misafir_adi_guncelle").value;
+			  var yas = document.querySelector("#yasGuncelle").value;
+			  var kilo = document.querySelector("#kiloGuncelle").value;
+			  var gelisTarihi = document.querySelector("#gelis_tarihi_guncelle").value;
+			  var notlar = document.querySelector("#notlarGuncelle").value;
+			  
+			  var data = {
+				misafirAd: misafirAdi,
+				yas: yas,
+				kilo: kilo,
+				gelisTarihi: gelisTarihi,
+				notlar: notlar
+			  };
+			  
+			  fetch('http://localhost:8080/guncelle/'+misafirId, {
+				method: 'PUT',
+				headers: {
+				  'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(data)
+			  })
+			  .then(function(response) {
+				if (response.ok) {
+				  console.log('Başarılı');
+				  alert("Güncelleme işlemi başarıyla gerçekleşti");
+				} else {
+				  console.log('Hata');
+				  alert("Güncelleme Başarısız !");
+				}
+			  })
+			  .catch(function(error) {
+				console.log('Hata');
+				alert("Bir hata oluştu !");
+			  });
+			});
+		
+		</script>
+		
+		<!-- SİLME -->
+		<script>
+			  document.querySelector("#misafirSil input[type='submit']").addEventListener('click', function(e) {
+				e.preventDefault(); // otomatik submiti engeller
+				var misafirId = document.querySelector("#misafir_id_sil").value;
+
+				fetch('http://localhost:8080/sil/'+misafirId, {
+				  method: 'DELETE',
+				  headers: {
+					'Content-Type': 'application/json'
+				  }
+				})
+				.then(function(response) {
+				  if (response.ok) {
+					console.log('Başarılı');
+					return response.text(); // API'den gelen yanıtı metin olarak al
+				  } else {
+					console.log('Hata');
+					throw new Error("Silme Başarısız !");
+				  }
+				})
+				.then(function(data) {
+				  // API'den dönen metni alert içinde göster
+				  alert(data);
+				})
+				.catch(function(error) {
+				  console.log('Hata');
+				  alert("Bir hata oluştu: " + error.message);
+				});
+			  });
+
+		</script>
+		
+		
+	
+		<!-- Listeleme(ById)-->
+		<script>
+		
+		  document.querySelector("#misafirGetir input[type='submit']").addEventListener('click', function(e) {
+			e.preventDefault();
+
+			var misafirId = document.querySelector("#misafir_id_getir").value;
+			fetch('http://localhost:8080/getir/' + misafirId)
+			  .then(response => response.json())
+			  .then(data => {
+				var misafir = data;
+				
+				var tablo = "<table><tr><th>ID</th><th>Misafir Adı</th><th>Yaş</th><th>Kilo</th><th>Geliş Tarihi</th><th>Notlar</th></tr>"
+				  + "<tr><td>" + misafir.id + "</td>"
+				  + "<td>" + misafir.misafirAd + "</td>"
+				  + "<td>" + misafir.yas + "</td>"
+				  + "<td>" + misafir.kilo + "</td>"
+				  + "<td>" + misafir.gelisTarihi + "</td>"
+				  + "<td>" + misafir.notlar + "</td></tr>"
+				  + "</table>";
+
+				document.getElementById("misafirById").innerHTML = tablo;
+			  })
+			  .catch(error => {
+				console.error(error);
+			  });
+		  });
+		</script>
+		
+		
+		
+		
+		<!-- LİSTELEME(findall)-->
+		<script>
+		  document.querySelector("#misafirListele input[type='submit']").addEventListener('click', function(e) {
+			e.preventDefault(); // otomatik submiti engeller
+			fetch('http://localhost:8080/listele')
+			  .then(response => response.json())
+			  .then(data => {
+				var misafirler = data;
+				var tabloIlkKisim = "<table><tr><th>ID</th><th>Misafir Adı</th><th>Yaş</th><th>Kilo</th><th>Geliş Tarihi</th><th>Notlar</th></tr>";
+				var tabloVeriKismi = "";
+				for (var i = 0; i < misafirler.length; i++) {
+				  tabloVeriKismi += "<tr><td>" + misafirler[i].id + "</td>"
+								  + "<td>" + misafirler[i].misafirAd + "</td>"
+								  + "<td>" + misafirler[i].yas + "</td>"
+								  + "<td>" + misafirler[i].kilo + "</td>"
+								  + "<td>" + misafirler[i].gelisTarihi + "</td>"
+								  + "<td>" + misafirler[i].notlar + "</td></tr>";
+				}
+				var tabloSonKisim = "</table>";
+				var tablo = tabloIlkKisim + tabloVeriKismi + tabloSonKisim;
+				document.getElementById("misafirListesi").innerHTML = tablo;
+			  })
+			  .catch(error => {
+				console.error(error);
+			  });
+		  });
+		</script>
+		
+		
+		
+		
+		
+</body>
+</html>
